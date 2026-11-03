@@ -3624,6 +3624,7 @@ function setupWait(){
 document.getElementById("baubles").addEventListener("click", e => {
   const ball = e.target.closest(".ball"); if (!ball) return;
   restart(ball, "wiggle");
+  if (isWaiting()) return; // pas de case secrète avant le 1er décembre
   if (ball.dataset.egg && ov.hidden) timers.push(setTimeout(openEgg, reduce ? 10 : 650));
 });
 function openEgg(){
