@@ -4,7 +4,7 @@ Calendrier de l'Avent 2026 pour le **Master GAEUR**. Du 1er au 24 décembre, une
 
 ![Aperçu du calendrier](preview.jpg)
 
-**👉 [Ouvrir le calendrier](https://fdosset9-ops.github.io/avent-geomatique/)**
+**👉 [Ouvrir le calendrier](https://fdosset9-ops.github.io/avent_gaeur2026/)**
 
 ---
 
