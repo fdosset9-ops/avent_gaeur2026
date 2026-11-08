@@ -2927,11 +2927,12 @@ const CONFIG = {
   signatureLettre: "François", // en bas de la lettre du 24
   // écran affiché avant le 1er décembre
   messageAttente: "Vingt-quatre tuiles à découvrir, une par jour jusqu'à Noël : des jeux de géo, des outils, des liens utiles. D'ici là, rien ne sert de revenir tous les jours. Mais tu peux.",
-  // message caché derrière le globe doré (une « ville-piège » des cartographes)
-  secret: {titre:"Bienvenue à Agloe", texte:[
-    "Dans les années 1930, deux cartographes inventent un village, Agloe, sur une petite route de l'État de New York. Un piège, pour démasquer ceux qui copieraient leur carte.",
-    "Quelques années plus tard, quelqu'un ouvre une épicerie à cet endroit et l'appelle… Agloe General Store. La carte avait fini par créer le lieu.",
-    "Il n'y avait que vingt-quatre cases. Celle-ci, c'est la vingt-cinquième : comme Agloe, elle n'était sur aucune carte."]}
+  // message caché derrière le globe doré (le point Nemo)
+  secret: {titre:"Bienvenue au point Nemo", texte:[
+    "48°52′ S, 123°23′ O. C'est l'endroit de l'océan le plus éloigné de toute terre : environ 2 700 km de la côte la plus proche, en plein Pacifique Sud.",
+    "Les humains les plus proches sont souvent les astronautes de la Station spatiale internationale, à 400 km au-dessus.",
+    "C'est aussi là qu'on fait tomber les vieux satellites et les stations spatiales en fin de vie. Un vrai cimetière, au fond de l'océan.",
+    "Comme le satellite de cette page, si tu cliques dessus. 🛰️"]}
 };
 
 // tier   : "or" (révélation courte), "givre" (rare : révélation longue + tampon), "icone" (le 24 : lettre cachetée)
@@ -3805,7 +3806,7 @@ function setupWait(){
   upd(); waitTimer = setInterval(upd, 1000);
 }
 
-/* ---------- Easter egg : le globe doré → Agloe ---------- */
+/* ---------- Easter egg : le globe doré → point Nemo ---------- */
 document.getElementById("baubles").addEventListener("click", e => {
   const ball = e.target.closest(".ball"); if (!ball) return;
   restart(ball, "wiggle");
@@ -3820,10 +3821,10 @@ function openEgg(){
   FX.clear(); FX.palette("icone");
   slot.hidden = true; env.hidden = true; reveal.hidden = true; openBtn.hidden = true;
   note.className = "note t-or";
-  note.innerHTML = `<div class="meta"><span>Case secrète</span><span>Ville-piège</span></div>${SPRIG}
+  note.innerHTML = `<div class="meta"><span>Case secrète</span><span>Point Nemo</span></div>${SPRIG}
     <h2>${esc(sec.titre)}</h2><div class="rule"></div><div class="body">${paras(sec.texte)}</div>
     <div class="foot">${SCALE}${CONFIG.signature ? `<div class="sig">${esc(CONFIG.signature)}</div>` : ""}</div>
-    <div class="seal" aria-hidden="true">A</div>`;
+    <div class="seal" aria-hidden="true">N</div>`;
   note.hidden = false; restart(note, "in");
   doFlash(); FX.burst(160); FX.glitter(1);
   closeBtn.hidden = false; closeBtn.focus();
